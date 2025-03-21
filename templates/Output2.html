@@ -1,0 +1,29 @@
+<!-- templates/output.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/output.css">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    
+    {% if results %}
+        {% for result in results %}
+            <section class="component">
+                <blockquote class="callout quote DE">
+                    {{ result.idea }}<br>
+                    <cite> - {{ result.Name }}</cite> 
+                </blockquote>
+            </section>
+        {% endfor %}
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+
+    <a href="/">Go back to search</a>
+</body>
+</html>
